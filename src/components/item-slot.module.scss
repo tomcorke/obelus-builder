@@ -1,0 +1,91 @@
+$equipped-border-width: 3px;
+$equipped-border-size: 10px;
+
+.itemSlot {
+  position: relative;
+  width: 400px;
+  height: 100px;
+  margin: 5px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    content: 'No item equipped';
+  }
+
+}
+
+.equipped {
+  &::before {
+    position: absolute;
+    content: ' ';
+    left: -$equipped-border-width;
+    top: -$equipped-border-width;
+    bottom: -$equipped-border-width;
+    width: $equipped-border-size;
+    border: $equipped-border-width solid white;
+    border-right-width: 0;
+    box-sizing: border-box;
+  }
+
+  &::after {
+    all: unset;
+    position: absolute;
+    content: ' ';
+    right: -$equipped-border-width;
+    top: -$equipped-border-width;
+    bottom: -$equipped-border-width;
+    width: $equipped-border-size;
+    border: $equipped-border-width solid white;
+    border-left-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+.quality_worn {
+  background-color: gray;
+}
+
+.quality_standard {
+  background-color: green;
+}
+
+.quality_specialized {
+  background-color: darkblue;
+}
+
+.quality_superior {
+  background-color: purple;
+}
+
+.quality_highend {
+  background-color: goldenrod;
+}
+
+.quality_exotic {
+  background-color: orangered;
+}
+
+.itemData {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 5px;
+
+  .name {
+    font-weight: bold;
+  }
+
+}

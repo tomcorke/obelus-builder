@@ -1,0 +1,24 @@
+.app {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: url(https://images.igdb.com/igdb/image/upload/t_original/yugj6cvnpzr1yj5y38zy.png);
+  background: url(https://images.igdb.com/igdb/image/upload/t_original/yoyigwdunnqpbcgkdnzj.png);
+  background-size: cover;
+}
+
+.header {
+}
+
+.main {
+  display: flex;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 50px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+}
