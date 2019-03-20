@@ -1,5 +1,6 @@
 {
   "name": "obelus-builder",
+  "homepage" : "https://tomcorke.github.io/obelus-builder",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
