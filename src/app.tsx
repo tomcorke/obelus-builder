@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import STYLES from './app.module.scss';
 
-class App extends Component {
+export class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className={STYLES.app}>
+        <header className={STYLES.header}>
+          <img src={logo} className={STYLES.logo} alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <a
-            className="App-link"
+            className={STYLES.link}
             href="https://reactjs.org"
             target="_blank"
             rel="noopener noreferrer"
@@ -24,5 +24,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
