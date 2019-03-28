@@ -1,6 +1,7 @@
 import { ItemType, ItemTypes } from "./item-types";
 import { WeaponType, WeaponTypes } from "./weapon-types";
-import { ItemQuality } from "./item-qualities";
+import { ItemQuality, ItemQualities } from "./item-qualities";
+import { Brands, Brand } from "./brands";
 
 interface CommonItemData {
   name: string
@@ -19,12 +20,22 @@ export interface Weapon extends CommonItemData {
 
 export interface Armor extends CommonItemData {
   itemType: typeof ItemTypes.ARMOR
+  /*
+  */
+  brand: Brand
 }
 
 export type Item = Weapon | Armor
 
-const testItem: Item = {
-  itemType: 'weapon',
+const testWeapon: Item = {
+  itemType: ItemTypes.WEAPON,
   name: 'test-weapon',
-  quality: 'worn',
+  quality: ItemQualities.STANDARD,
+}
+
+const testArmor: Item = {
+  itemType: ItemTypes.ARMOR,
+  name: 'test-armor',
+  quality: ItemQualities.HIGHEND,
+  brand: Brands.FENRIS
 }

@@ -3,21 +3,50 @@ import classnames from 'classnames'
 
 import STYLES from './item-slot.module.scss'
 import { ItemQuality } from '../data/item-qualities';
-import { Item } from '../data/items';
+import { Item, Weapon, Armor } from '../data/items';
+import { ItemTypes } from '../data/item-types';
+import { BRAND_NAMES } from '../data/brands';
 
 interface ItemSlotProps {
   itemData?: Item
+  equipped?: boolean
 }
 
-export const ItemSlot = ({ itemData }: ItemSlotProps) => {
+const weaponDisplay = (weapon: Weapon) => (<div />)
 
-  const itemDataDisplay = itemData
-    ? (
-      <div className={STYLES.itemData}>
-        <div className={STYLES.name}>{itemData.name}</div>
-      </div>
-    )
-    : null
+const armorDisplay = (armor: Armor) => (
+  <>
+    <div className={STYLES.details}>
+      <div className={STYLES.name}>{armor.name}</div>
+      <div className={STYLES.brand}>{BRAND_NAMES[armor.brand]}</div>
+    </div>
+    <div className={STYLES.level}>
+      <div className={STYLES.scoreLabel}>Score</div>
+      <div className={STYLES.scoreValue}>450</div>
+    </div>
+    <div className={STYLES.stats}>
+      <div className={STYLES.armorLabel}>ARM</div>
+      <div className={STYLES.armorValue}>31.6k</div>
+    </div>
+    <div className={STYLES.talents} />
+  </>
+)
+
+export const ItemSlot = ({ itemData, equipped }: ItemSlotProps) => {
+  if (!itemData) return null
+
+  let itemDisplay = null
+  if (itemData.itemType === ItemTypes.WEAPON)
+    itemDisplay = weaponDisplay(itemData)
+  if (itemData.itemType === ItemTypes.ARMOR)
+    itemDisplay = armorDisplay(itemData)
+
+  const itemDataDisplay = (
+    <div className={STYLES.itemData}>
+      <div className={STYLES.qualityStripe} />
+      {itemDisplay}
+    </div>
+  )
 
   const quality = itemData && itemData.quality;
 
@@ -25,8 +54,8 @@ export const ItemSlot = ({ itemData }: ItemSlotProps) => {
     <div className={classnames(
       STYLES.itemSlot,
       {
-        [STYLES.equipped]: true,
-        [STYLES[`quality_${quality}`]]: !!quality && STYLES[`quality_${quality}`],
+        [STYLES.equipped]: !!equipped,
+        [STYLES[`quality_${quality}`]]: !!quality,
       })}>
       {itemDataDisplay}
     </div>

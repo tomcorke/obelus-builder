@@ -34,5 +34,7 @@ export const randomWeapon = ({ quality }: RandomWeaponOptions = {}) => {
     name: randomFrom(WEAPON_NAMES),
     quality: quality || randomFrom(ITEM_QUALITIES),
   }
-  return weapon;
+  return weapon
 }
+
+export const randomWeaponName = () => randomFrom(WEAPON_NAMES)

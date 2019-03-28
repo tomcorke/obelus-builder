@@ -1,5 +1,7 @@
+@import '../mixins.scss';
+
 $equipped-border-width: 3px;
-$equipped-border-size: 10px;
+$equipped-border-size: 15px;
 
 .itemSlot {
   position: relative;
@@ -8,7 +10,9 @@ $equipped-border-size: 10px;
   margin: 5px;
   box-sizing: border-box;
   border: 1px solid #999;
+  // opacity: 0.5;
 
+  /*
   &::after {
     position: absolute;
     left: 0;
@@ -21,10 +25,17 @@ $equipped-border-size: 10px;
     justify-content: center;
     content: 'No item equipped';
   }
+  */
 
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
 }
 
 .equipped {
+  opacity: 1;
+
   &::before {
     position: absolute;
     content: ' ';
@@ -51,41 +62,128 @@ $equipped-border-size: 10px;
   }
 }
 
-.quality_worn {
-  background-color: gray;
+@each $quality, $color in $qualityColors {
+  .quality_#{$quality} {
+    .itemData {
+      background: linear-gradient(to right, rgba($color, 0.3) 0%, transparent 100%);
+    }
+    .qualityStripe {
+      background-color: $color;
+    }
+  }
 }
 
-.quality_standard {
-  background-color: green;
+@mixin pseudo-pixel($left, $top) {
+  display: block;
+  content: '';
+  position: absolute;
+  left: $left;
+  top: $top;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(white, 0.5);
+  box-shadow: 0 0 0 0.5px rgba(white, 0.3);
 }
 
-.quality_specialized {
-  background-color: darkblue;
-}
-
-.quality_superior {
-  background-color: purple;
-}
-
-.quality_highend {
-  background-color: goldenrod;
-}
-
-.quality_exotic {
-  background-color: orangered;
+@mixin x-content() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background:
+      linear-gradient(
+        to top left,
+        transparent calc(50% - 1px),
+        rgba(white, 0.2) 50%,
+        transparent calc(50% + 1px)
+      ),
+      linear-gradient(
+        to top right,
+        transparent calc(50% - 1px),
+        rgba(white, 0.2) 50%,
+        transparent calc(50% + 1px)
+      );
+  }
 }
 
 .itemData {
-  position: absolute;
-  left: 0;
-  top: 0;
+  position: relative;
   width: 100%;
   height: 100%;
   color: white;
-  padding: 5px;
+  box-sizing: border-box;
 
-  .name {
-    font-weight: bold;
+  display: grid;
+  grid-template-areas:
+    'quality name level talents'
+    'quality stats stats talents';
+  grid-template-columns: 12px 2fr 1fr 50px;
+
+  .qualityStripe {
+    grid-area: quality;
+    border-right: 1px solid rgba(white, 0.1);
+  }
+
+  .details {
+    grid-area: name;
+    padding: 5px;
+    border-right: 1px solid rgba(white, 0.1);
+    position: relative;
+    &:before { @include pseudo-pixel(0%, 100%); }
+    &:after { @include pseudo-pixel(100%, 100%); }
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    .name {}
+
+    .brand {
+      font-weight: bold;
+    }
+  }
+
+  .level {
+    grid-area: level;
+    padding: 5px;
+    position: relative;
+    &:after { @include pseudo-pixel(100%, 100%); }
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .scoreLabel {}
+
+    .scoreValue {
+      font-weight: bold;
+    }
+  }
+
+  .stats {
+    grid-area: stats;
+    padding: 5px;
+    border-top: 1px solid rgba(white, 0.1);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    .armorLabel {
+      font-weight: bold;
+    }
+
+    .armorValue {}
+  }
+
+  .talents {
+    grid-area: talents;
+    border-left: 1px solid rgba(white, 0.1);
+    @include x-content();
   }
 
 }

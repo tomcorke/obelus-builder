@@ -1,3 +1,5 @@
+import { randomFrom } from "../utils";
+
 const ITEM_QUALITY_WORN = 'worn'
 const ITEM_QUALITY_STANDARD = 'standard'
 const ITEM_QUALITY_SPECIALIZED = 'specialized'
@@ -31,3 +33,5 @@ export const ItemQualities = {
   HIGHEND: ITEM_QUALITY_HIGHEND as typeof ITEM_QUALITY_HIGHEND,
   EXOTIC: ITEM_QUALITY_EXOTIC as typeof ITEM_QUALITY_EXOTIC,
 }
+
+export const randomQuality = () => randomFrom(ITEM_QUALITIES)

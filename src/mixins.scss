@@ -1,0 +1,16 @@
+// Division orange = 255, 106, 19
+
+// Quality colours
+
+$qualityColors: (
+  worn: gray,
+  standard: green,
+  specialized: darkblue,
+  superior: purple,
+  highend: goldenrod,
+  exotic: orangered,
+);
+
+@function qualityColor($quality) {
+  @return map-get($qualityColors, $quality);
+}
