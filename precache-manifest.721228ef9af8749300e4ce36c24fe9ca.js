@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/obelus-builder/static/js/runtime~main.5f090308.js"
   },
   {
-    "revision": "f5f334e291c5e54d00d4",
+    "revision": "e3cf323b5782aa7d37d9",
     "url": "/obelus-builder/static/js/main.becb9a01.chunk.js"
   },
   {
@@ -12,11 +12,11 @@ self.__precacheManifest = [
     "url": "/obelus-builder/static/js/2.60463b45.chunk.js"
   },
   {
-    "revision": "f5f334e291c5e54d00d4",
-    "url": "/obelus-builder/static/css/main.68dcb081.chunk.css"
+    "revision": "e3cf323b5782aa7d37d9",
+    "url": "/obelus-builder/static/css/main.09a74845.chunk.css"
   },
   {
-    "revision": "2cd3afed54366eeb37d0b796be9aabe6",
+    "revision": "7cf86f53b1817e0246db5c365459f4da",
     "url": "/obelus-builder/index.html"
   }
 ];

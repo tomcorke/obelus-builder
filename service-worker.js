@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/obelus-builder/precache-manifest.f0870dac3a704e446abaf79036b347b1.js"
+  "/obelus-builder/precache-manifest.721228ef9af8749300e4ce36c24fe9ca.js"
 );
 
 workbox.clientsClaim();
