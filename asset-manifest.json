@@ -1,14 +1,13 @@
 {
-  "main.css": "/obelus-builder/static/css/main.ae8aa36c.chunk.css",
-  "main.js": "/obelus-builder/static/js/main.e5c6c04b.chunk.js",
-  "main.js.map": "/obelus-builder/static/js/main.e5c6c04b.chunk.js.map",
+  "main.css": "/obelus-builder/static/css/main.68dcb081.chunk.css",
+  "main.js": "/obelus-builder/static/js/main.becb9a01.chunk.js",
+  "main.js.map": "/obelus-builder/static/js/main.becb9a01.chunk.js.map",
   "runtime~main.js": "/obelus-builder/static/js/runtime~main.5f090308.js",
   "runtime~main.js.map": "/obelus-builder/static/js/runtime~main.5f090308.js.map",
-  "static/js/2.68a1ccac.chunk.js": "/obelus-builder/static/js/2.68a1ccac.chunk.js",
-  "static/js/2.68a1ccac.chunk.js.map": "/obelus-builder/static/js/2.68a1ccac.chunk.js.map",
+  "static/js/2.60463b45.chunk.js": "/obelus-builder/static/js/2.60463b45.chunk.js",
+  "static/js/2.60463b45.chunk.js.map": "/obelus-builder/static/js/2.60463b45.chunk.js.map",
   "index.html": "/obelus-builder/index.html",
-  "precache-manifest.b480aa2d9de2330129c3c222bbc3ab50.js": "/obelus-builder/precache-manifest.b480aa2d9de2330129c3c222bbc3ab50.js",
+  "precache-manifest.f0870dac3a704e446abaf79036b347b1.js": "/obelus-builder/precache-manifest.f0870dac3a704e446abaf79036b347b1.js",
   "service-worker.js": "/obelus-builder/service-worker.js",
-  "static/css/main.ae8aa36c.chunk.css.map": "/obelus-builder/static/css/main.ae8aa36c.chunk.css.map",
-  "static/media/logo.svg": "/obelus-builder/static/media/logo.5d5d9eef.svg"
+  "static/css/main.68dcb081.chunk.css.map": "/obelus-builder/static/css/main.68dcb081.chunk.css.map"
 }
